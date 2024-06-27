@@ -1,0 +1,48 @@
+.container {
+	width: 800px;
+	margin: 100px auto;
+	border: 1px solid #ddd;
+	padding: 50px 100px;
+}
+
+button {
+	padding: 10px 20px;
+	background-color: rgb(174, 71, 96);
+	color: #fff;
+	font-size: 1em;
+}
+
+input {
+	padding: 10px 20px;
+	font-size: 1em;
+	width: 100%;
+}
+
+.input-wrapper {
+	width: 100%;
+	display: flex;
+}
+
+.task-input {
+	font-size: 2em;
+}
+
+.task-button {
+	font-size: 2em;
+}
+
+.task-list-item div {
+	display: flex;
+}
+
+.task-list-item {
+	margin-top: 20px;
+}
+
+.task-list-item span {
+	font-size: 1.5em;
+}
+
+.task-actions button {
+	margin-left: 10px;
+}
