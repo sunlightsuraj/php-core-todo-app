@@ -3,6 +3,8 @@ require("./database/db.php");
 
 $sql = "select * from todo";
 $res = $conn->query($sql);
+
+$success = $_GET["success"];
 ?>
 
 <html>
@@ -14,13 +16,24 @@ $res = $conn->query($sql);
 
 <body>
 	<div class="container">
-		<div class="input-wrapper">
-			<input type="text" id="taskInput" class="task-input" placeholder="Write your task">
-			<button id="taskButton" class="task-button">Add</button>
-		</div>
+		<?php
+		if ($success) {
+			echo "<p>Data inserted successfully.</p>";
+		} else {
+			echo "<p>Data insert failed.</p>";
+		}
+		?>
+		
+		<form action="task-add.php" method="post">
+			<div class="input-wrapper">
+				<input type="text" id="taskInput" class="task-input" placeholder="Write your task" name="task">
+				<button id="taskButton" class="task-button">Add</button>
+			</div>
+		</form>
 		<div>
 			<ul id="taskListUL">
 				<?php
+				
 				if ($res && $res->num_rows) {
 					while ($data = $res->fetch_array()) {
 				?>
@@ -42,7 +55,7 @@ $res = $conn->query($sql);
 		</div>
 	</div>
 
-	<script src="./script.js"></script>
+	<!-- <script src="./script.js"></script> -->
 </body>
 
 </html>
